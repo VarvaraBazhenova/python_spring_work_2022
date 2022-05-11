@@ -8,11 +8,13 @@ A = [31, 4, 59, 26, 41, 58, 1, -20, 100, -7]
 # по убыванию.
 
 def insertion_sort(a):
-    for j in range(1, len(a)):
-        key = a.pop(j)
+    for j in range(2, len(a)):
+        key = a[j]
+        # Вставка элемента A[j] в отсортированную последовательность A[1..j − 1]
         i = j - 1
-        while (i >= 0) and (a[i] <= key):
+        while i >= 0 and a[i] <= key:
+            a[i + 1] = a[i]
             i -= 1
-        a.insert(i + 1, key)
+        a[i + 1] = key
     print(a)
 insertion_sort(A)
