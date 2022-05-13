@@ -4,7 +4,7 @@
 #
 # Задача.
 # Перепишите процедуру INSERTION_SORT и отсортируйте последовательность
-A = [31, 4, 59, 26, 41, 58, 1, -20, 100, -7]
+A = [31, 4, 59, 26, 41, 58, 1, -20, 100, -7, 0]
 # по убыванию.
 
 def insertion_sort(a):
@@ -16,5 +16,5 @@ def insertion_sort(a):
             a[i + 1] = a[i]
             i -= 1
         a[i + 1] = key
-    print(a)
-insertion_sort(A)
+    return a
+print(insertion_sort(A))

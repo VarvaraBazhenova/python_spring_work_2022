@@ -8,18 +8,13 @@
 # ........................................
 # Выводы комбинаций оформить в список кортежей.
 
-# n,m=int(input('n=')),int(input('m='))" "((a, b)
-# for a in range(1,n+1):
-# print(a)
-# for b in range(1,m+1)):
-#     print(b)
-
-for i in range(1,7):
-    for j in range(1,7):
-        comb_tuple = (i,j)
-        comb_lst = []
-        comb_lst.append(comb_tuple)
-        print("Сумма", i+j, " комбинация", comb_lst)
-
-
+for k in range(2, 13):
+    comb_lst = []
+    for i in range(1, 7):
+        for j in range(1, 7):
+            comb_tuple = (i, j)
+            if k == i + j:
+                comb_lst.append(comb_tuple)
+    else:
+        print("Сумма", k, " комбинация", comb_lst)
 
