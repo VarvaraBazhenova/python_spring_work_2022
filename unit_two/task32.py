@@ -7,9 +7,9 @@
 # https://www.psycopg.org/psycopg3/docs/basic/usage.html
 # Для подключения использовать пользователя и базу отличную от postgres
 
-import psycopg
+import psycopg2
 
-with psycopg.connect("dbname=postgres user=postgres password=06042022") as conn:
+with psycopg2.connect("dbname=postgres user=postgres password=06042022") as conn:
     with conn.cursor() as cur:
         cur.execute("""
             CREATE TABLE "group" (
@@ -58,11 +58,11 @@ with psycopg.connect("dbname=postgres user=postgres password=06042022") as conn:
             """)
 
         cur.execute("""
-        CREATE INDEX "idx_student_id_group" ON "student" ("id_group");
-        """)
+            CREATE INDEX "idx_student_id_group" ON "student" ("id_group");
+            """)
         cur.execute("""
-        CREATE INDEX "idx_test_student_id_student" ON "test_student" ("id_student");
-        """)
+            CREATE INDEX "idx_test_student_id_student" ON "test_student" ("id_student");
+            """)
         cur.execute("""
-        CREATE INDEX "idx_test_student_id_test" ON "test_student" ("id_test");
-        """)
+            CREATE INDEX "idx_test_student_id_test" ON "test_student" ("id_test");
+            """)
